@@ -57,7 +57,7 @@ const SignupForm = () => {
 
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-md p-8 bg-[#020826] rounded-lg shadow-xl">
+      <div className="relative w-full max-w-md p-8 bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-400 mb-4" />
           <p className="text-white text-center">Processing your registration...</p>
@@ -71,7 +71,7 @@ const SignupForm = () => {
       <TrustedPartnerBadge />
 
       {/* Main Form Container */}
-      <div className="bg-[#020826] rounded-lg shadow-xl p-8 relative">
+      <div className="bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] p-8 relative border border-white/10">
         
         <FormHeader />
 
@@ -113,7 +113,7 @@ const SignupForm = () => {
 
           <Button 
             type="submit" 
-            className="w-full bg-[#3c84ff] hover:bg-[#2c74ef] text-white font-bold text-base rounded-lg h-12 mt-6" 
+            className="w-full bg-[#3c84ff] hover:bg-[#2c74ef] text-white font-bold text-base rounded-lg h-12 mt-6 shadow-lg hover:shadow-xl transition-all duration-200" 
             disabled={isLoading}
           >
             GET STARTED →
