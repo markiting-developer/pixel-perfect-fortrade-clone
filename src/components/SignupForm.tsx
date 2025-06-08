@@ -57,11 +57,7 @@ const SignupForm = () => {
 
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-sm p-8" style={{
-        backgroundColor: '#020826',
-        borderRadius: '8px',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)'
-      }}>
+      <div className="relative w-full max-w-md p-8 bg-[#020826] rounded-lg shadow-xl">
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-400 mb-4" />
           <p className="text-white text-center">Processing your registration...</p>
@@ -71,15 +67,11 @@ const SignupForm = () => {
   }
 
   return (
-    <div className="relative w-full max-w-sm">
+    <div className="relative w-full max-w-md">
       <TrustedPartnerBadge />
 
-      {/* Main Form Container with #020826 background */}
-      <div style={{
-        backgroundColor: '#020826',
-        borderRadius: '8px',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)'
-      }} className="p-8 relative">
+      {/* Main Form Container */}
+      <div className="bg-[#020826] rounded-lg shadow-xl p-8 relative">
         
         <FormHeader />
 
@@ -121,14 +113,7 @@ const SignupForm = () => {
 
           <Button 
             type="submit" 
-            className="w-full text-white font-bold text-base rounded-lg transition-all duration-200 mt-6" 
-            style={{
-              backgroundColor: '#3c84ff',
-              height: '50px',
-              borderRadius: '6px'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#5b9dff'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#3c84ff'}
+            className="w-full bg-[#3c84ff] hover:bg-[#2c74ef] text-white font-bold text-base rounded-lg h-12 mt-6" 
             disabled={isLoading}
           >
             GET STARTED →

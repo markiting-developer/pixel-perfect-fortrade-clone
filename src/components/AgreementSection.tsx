@@ -14,19 +14,14 @@ const AgreementSection = ({ agreement, onAgreementChange }: AgreementSectionProp
           id="agreement" 
           checked={agreement} 
           onCheckedChange={checked => onAgreementChange(checked as boolean)} 
-          className="mt-0.5 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" 
-          style={{
-            borderColor: 'rgba(80, 144, 255, 0.8)'
-          }} 
+          className="mt-0.5 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500 border-white/30" 
         />
         <label htmlFor="agreement" className="text-sm text-white leading-relaxed font-normal">
           I agree to share my details to Fortrade.com and create a demo trading account.
         </label>
       </div>
 
-      <div className="text-xs leading-relaxed mt-4 font-normal" style={{
-        color: 'rgba(255,255,255,0.7)'
-      }}>
+      <div className="text-sm leading-relaxed mt-4 font-normal text-gray-300">
         <p>
           By proceeding, I agree to the{" "}
           <a href="#" className="text-blue-400 underline hover:text-blue-300">Privacy Policy</a>{" "}
@@ -43,7 +38,7 @@ const AgreementSection = ({ agreement, onAgreementChange }: AgreementSectionProp
         <p className="text-blue-400 text-sm font-normal">
           Already have an account?
         </p>
-        <p className="text-sm font-normal text-blue-400">
+        <p className="text-sm font-normal">
           Need help?{" "}
           <a href="#" className="text-blue-400 underline hover:text-blue-300">Contact Us</a>
         </p>
