@@ -19,8 +19,8 @@ const Index = () => {
       {/* Header with Fortrade Logo */}
       <Header />
       
-      {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-end pr-8 lg:pr-16">
+      {/* Content - Centered form */}
+      <div className="relative z-10 min-h-screen flex items-center justify-center px-8">
         <main className="w-full max-w-md">
           <SignupForm />
         </main>
