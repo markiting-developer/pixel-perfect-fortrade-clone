@@ -77,7 +77,7 @@ const SignupForm = () => {
       }} className="p-8 relative">
         
         {/* Header with FXCritics branding */}
-        <div className="mb-8">
+        <div className="mb-12">
           <div className="mb-6">
             <p className="text-gray-300 text-sm font-normal mb-3">Trusted by</p>
             <div className="flex items-baseline gap-1">
