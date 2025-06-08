@@ -50,11 +50,10 @@ const SignupForm = () => {
   };
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-sm p-8 border" style={{
+      <div className="relative w-full max-w-sm p-8" style={{
         backgroundColor: '#020826',
         borderRadius: '8px',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
-        borderColor: 'rgba(59, 130, 246, 0.3)'
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)'
       }}>
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-400 mb-4" />
@@ -74,9 +73,8 @@ const SignupForm = () => {
       <div style={{
         backgroundColor: '#020826',
         borderRadius: '8px',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
-        borderColor: 'rgba(59, 130, 246, 0.3)'
-      }} className="p-8 border relative">
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)'
+      }} className="p-8 relative">
         
         {/* Header with FXCritics branding */}
         <div className="mb-8">
