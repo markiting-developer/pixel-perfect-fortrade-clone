@@ -1,11 +1,9 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
-
 const SignupForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -16,29 +14,24 @@ const SignupForm = () => {
     phone: "",
     agreement: true
   });
-
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.agreement) {
       toast.error("Please fill in all required fields and accept the agreement");
       return;
     }
-
     setIsLoading(true);
-    
     try {
       // Simulate form submission to Fortrade endpoint
       await new Promise(resolve => setTimeout(resolve, 2000));
       toast.success("Registration submitted successfully!");
-      
+
       // Reset form
       setFormData({
         firstName: "",
@@ -54,52 +47,37 @@ const SignupForm = () => {
       setIsLoading(false);
     }
   };
-
   if (isLoading) {
-    return (
-      <div className="relative w-full max-w-sm rounded-xl p-8 shadow-2xl border" 
-           style={{
-             background: 'linear-gradient(135deg, #0f1b2e 0%, #1a2a42 50%, #0f1b2e 100%)',
-             borderColor: 'rgba(59, 130, 246, 0.3)',
-             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-           }}>
+    return <div className="relative w-full max-w-sm rounded-xl p-8 shadow-2xl border" style={{
+      background: 'linear-gradient(135deg, #0f1b2e 0%, #1a2a42 50%, #0f1b2e 100%)',
+      borderColor: 'rgba(59, 130, 246, 0.3)',
+      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+    }}>
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-400 mb-4" />
           <p className="text-white text-center">Processing your registration...</p>
         </div>
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="relative w-full max-w-sm">
+  return <div className="relative w-full max-w-sm">
       {/* Trusted Partner Badge - positioned outside the form, overlapping top-right */}
       <div className="absolute -top-10 -right-10 z-20">
-        <img 
-          src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" 
-          alt="Trusted Partner" 
-          className="h-24 w-24"
-        />
+        <img src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" alt="Trusted Partner" className="h-24 w-24" />
       </div>
 
       {/* Main Form Container with rich navy gradient */}
-      <div className="rounded-xl p-8 shadow-2xl border relative" 
-           style={{
-             background: 'linear-gradient(135deg, #0f1b2e 0%, #1a2a42 50%, #0f1b2e 100%)',
-             borderColor: 'rgba(59, 130, 246, 0.3)',
-             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-           }}>
+      <div style={{
+      background: 'linear-gradient(135deg, #0f1b2e 0%, #1a2a42 50%, #0f1b2e 100%)',
+      borderColor: 'rgba(59, 130, 246, 0.3)',
+      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+    }} className="rounded-xl p-8 shadow-2xl border relative bg-[#020826]">
         
         {/* Header with FXCritics branding */}
         <div className="mb-8">
           <div className="mb-6">
             <p className="text-gray-300 text-sm font-normal mb-2">Trusted by</p>
             <div className="flex items-baseline gap-1">
-              <img 
-                src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" 
-                alt="FX" 
-                className="h-8 w-auto"
-              />
+              <img src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" alt="FX" className="h-8 w-auto" />
               <span className="text-white text-2xl font-bold">Critics</span>
             </div>
           </div>
@@ -108,109 +86,61 @@ const SignupForm = () => {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <Input
-              type="text"
-              placeholder="First Name"
-              value={formData.firstName}
-              onChange={(e) => handleInputChange("firstName", e.target.value)}
-              className="h-12 px-4 rounded-lg text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border"
-              style={{
-                backgroundColor: 'rgba(15, 27, 46, 0.6)',
-                borderColor: 'rgba(99, 179, 237, 0.4)',
-                borderWidth: '1px'
-              }}
-              required
-            />
+            <Input type="text" placeholder="First Name" value={formData.firstName} onChange={e => handleInputChange("firstName", e.target.value)} className="h-12 px-4 rounded-lg text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border" style={{
+            backgroundColor: 'rgba(15, 27, 46, 0.6)',
+            borderColor: 'rgba(99, 179, 237, 0.4)',
+            borderWidth: '1px'
+          }} required />
           </div>
 
           <div>
-            <Input
-              type="text"
-              placeholder="Last Name"
-              value={formData.lastName}
-              onChange={(e) => handleInputChange("lastName", e.target.value)}
-              className="h-12 px-4 rounded-lg text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border"
-              style={{
-                backgroundColor: 'rgba(15, 27, 46, 0.6)',
-                borderColor: 'rgba(99, 179, 237, 0.4)',
-                borderWidth: '1px'
-              }}
-              required
-            />
+            <Input type="text" placeholder="Last Name" value={formData.lastName} onChange={e => handleInputChange("lastName", e.target.value)} className="h-12 px-4 rounded-lg text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border" style={{
+            backgroundColor: 'rgba(15, 27, 46, 0.6)',
+            borderColor: 'rgba(99, 179, 237, 0.4)',
+            borderWidth: '1px'
+          }} required />
           </div>
 
           <div>
-            <Input
-              type="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={(e) => handleInputChange("email", e.target.value)}
-              className="h-12 px-4 rounded-lg text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border"
-              style={{
-                backgroundColor: 'rgba(15, 27, 46, 0.6)',
-                borderColor: 'rgba(99, 179, 237, 0.4)',
-                borderWidth: '1px'
-              }}
-              required
-            />
+            <Input type="email" placeholder="Email" value={formData.email} onChange={e => handleInputChange("email", e.target.value)} className="h-12 px-4 rounded-lg text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border" style={{
+            backgroundColor: 'rgba(15, 27, 46, 0.6)',
+            borderColor: 'rgba(99, 179, 237, 0.4)',
+            borderWidth: '1px'
+          }} required />
           </div>
 
           <div className="flex gap-3">
-            <Input
-              type="text"
-              placeholder="44"
-              value={formData.phoneCode}
-              onChange={(e) => handleInputChange("phoneCode", e.target.value)}
-              className="h-12 px-4 rounded-lg w-20 text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border"
-              style={{
-                backgroundColor: 'rgba(15, 27, 46, 0.6)',
-                borderColor: 'rgba(99, 179, 237, 0.4)',
-                borderWidth: '1px'
-              }}
-            />
-            <Input
-              type="tel"
-              placeholder="Phone"
-              value={formData.phone}
-              onChange={(e) => handleInputChange("phone", e.target.value)}
-              className="h-12 px-4 rounded-lg flex-1 text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border"
-              style={{
-                backgroundColor: 'rgba(15, 27, 46, 0.6)',
-                borderColor: 'rgba(99, 179, 237, 0.4)',
-                borderWidth: '1px'
-              }}
-              required
-            />
+            <Input type="text" placeholder="44" value={formData.phoneCode} onChange={e => handleInputChange("phoneCode", e.target.value)} className="h-12 px-4 rounded-lg w-20 text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border" style={{
+            backgroundColor: 'rgba(15, 27, 46, 0.6)',
+            borderColor: 'rgba(99, 179, 237, 0.4)',
+            borderWidth: '1px'
+          }} />
+            <Input type="tel" placeholder="Phone" value={formData.phone} onChange={e => handleInputChange("phone", e.target.value)} className="h-12 px-4 rounded-lg flex-1 text-sm font-normal text-white placeholder:text-gray-400 placeholder:font-normal border" style={{
+            backgroundColor: 'rgba(15, 27, 46, 0.6)',
+            borderColor: 'rgba(99, 179, 237, 0.4)',
+            borderWidth: '1px'
+          }} required />
           </div>
 
-          <Button 
-            type="submit" 
-            className="w-full h-14 text-white font-bold text-base rounded-lg transition-all duration-200 hover:brightness-110 mt-6"
-            style={{ 
-              backgroundColor: '#5090ff',
-              color: '#ffffff'
-            }}
-            disabled={isLoading}
-          >
+          <Button type="submit" className="w-full h-14 text-white font-bold text-base rounded-lg transition-all duration-200 hover:brightness-110 mt-6" style={{
+          backgroundColor: '#5090ff',
+          color: '#ffffff'
+        }} disabled={isLoading}>
             GET STARTED →
           </Button>
 
           <div className="flex items-start gap-3 mt-6">
-            <Checkbox
-              id="agreement"
-              checked={formData.agreement}
-              onCheckedChange={(checked) => handleInputChange("agreement", checked as boolean)}
-              className="mt-0.5 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500"
-              style={{
-                borderColor: 'rgba(80, 144, 255, 0.8)'
-              }}
-            />
+            <Checkbox id="agreement" checked={formData.agreement} onCheckedChange={checked => handleInputChange("agreement", checked as boolean)} className="mt-0.5 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500" style={{
+            borderColor: 'rgba(80, 144, 255, 0.8)'
+          }} />
             <label htmlFor="agreement" className="text-sm text-white leading-relaxed font-normal">
               I agree to share my details to Fortrade.com and create a demo trading account.
             </label>
           </div>
 
-          <div className="text-xs leading-relaxed mt-4 font-normal" style={{ color: 'rgba(255,255,255,0.7)' }}>
+          <div className="text-xs leading-relaxed mt-4 font-normal" style={{
+          color: 'rgba(255,255,255,0.7)'
+        }}>
             <p>
               By proceeding, I agree to the{" "}
               <a href="#" className="text-blue-400 underline hover:text-blue-300">Privacy Policy</a>{" "}
@@ -234,8 +164,6 @@ const SignupForm = () => {
           </div>
         </form>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default SignupForm;
