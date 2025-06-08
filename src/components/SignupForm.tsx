@@ -68,39 +68,39 @@ const SignupForm = () => {
 
   return (
     <div className="relative w-full max-w-sm">
-      {/* Trusted Partner Badge - positioned outside the form */}
-      <div className="absolute -top-6 -right-6 z-10">
+      {/* Trusted Partner Badge - positioned outside the form, overlapping top-right */}
+      <div className="absolute -top-4 -right-4 z-20">
         <img 
           src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" 
           alt="Trusted Partner" 
-          className="h-20 w-20"
+          className="h-16 w-16"
         />
       </div>
 
       {/* Main Form Container */}
-      <div className="bg-gray-800/95 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-gray-700/50">
-        {/* Header */}
-        <div className="mb-8">
+      <div className="bg-gray-800/95 backdrop-blur-xl rounded-xl p-6 shadow-2xl border border-gray-700/50 relative">
+        {/* Header with FXCritics branding */}
+        <div className="mb-6">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-gray-300 text-sm font-medium">Trusted by</span>
             <img 
               src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" 
               alt="FX" 
-              className="h-5 w-auto"
+              className="h-4 w-auto"
             />
             <span className="text-white text-sm font-medium">Critics</span>
           </div>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <Input
               type="text"
               placeholder="First Name"
               value={formData.firstName}
               onChange={(e) => handleInputChange("firstName", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg"
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg text-base"
               required
             />
           </div>
@@ -111,7 +111,7 @@ const SignupForm = () => {
               placeholder="Last Name"
               value={formData.lastName}
               onChange={(e) => handleInputChange("lastName", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg"
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg text-base"
               required
             />
           </div>
@@ -122,7 +122,7 @@ const SignupForm = () => {
               placeholder="Email"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg"
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg text-base"
               required
             />
           </div>
@@ -133,28 +133,28 @@ const SignupForm = () => {
               placeholder="44"
               value={formData.phoneCode}
               onChange={(e) => handleInputChange("phoneCode", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg w-20"
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg w-20 text-base"
             />
             <Input
               type="tel"
               placeholder="Phone"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg flex-1"
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg flex-1 text-base"
               required
             />
           </div>
 
           <Button 
             type="submit" 
-            className="w-full h-12 text-white font-semibold text-base rounded-lg transition-all duration-200 hover:opacity-90"
+            className="w-full h-12 text-white font-semibold text-base rounded-lg transition-all duration-200 hover:opacity-90 mt-5"
             style={{ backgroundColor: '#2193FF' }}
             disabled={isLoading}
           >
             GET STARTED →
           </Button>
 
-          <div className="flex items-start gap-3 mt-6">
+          <div className="flex items-start gap-3 mt-3">
             <Checkbox
               id="agreement"
               checked={formData.agreement}
@@ -166,7 +166,7 @@ const SignupForm = () => {
             </label>
           </div>
 
-          <div className="text-xs text-gray-400 leading-relaxed mt-6 opacity-60">
+          <div className="text-xs text-gray-400 leading-relaxed mt-4 opacity-60">
             <p>
               By proceeding, I agree to the{" "}
               <a href="#" className="text-blue-400 underline hover:text-blue-300">Privacy Policy</a>{" "}
@@ -179,11 +179,11 @@ const SignupForm = () => {
             </p>
           </div>
 
-          <div className="text-center mt-6 space-y-2">
-            <p className="text-gray-400 text-sm">
+          <div className="text-center mt-4 space-y-1">
+            <p className="text-gray-400 text-xs opacity-60">
               Already have an account?
             </p>
-            <p className="text-sm">
+            <p className="text-xs opacity-60">
               Need help?{" "}
               <a href="#" className="text-blue-400 underline hover:text-blue-300">Contact Us</a>
             </p>
