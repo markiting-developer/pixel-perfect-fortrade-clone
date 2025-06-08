@@ -50,10 +50,11 @@ const SignupForm = () => {
   };
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-sm rounded-xl p-8 shadow-2xl border" style={{
+      <div className="relative w-full max-w-sm p-8 border" style={{
         backgroundColor: '#020826',
-        borderColor: 'rgba(59, 130, 246, 0.3)',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+        borderRadius: '8px',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
+        borderColor: 'rgba(59, 130, 246, 0.3)'
       }}>
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-400 mb-4" />
@@ -72,9 +73,10 @@ const SignupForm = () => {
       {/* Main Form Container with #020826 background */}
       <div style={{
         backgroundColor: '#020826',
-        borderColor: 'rgba(59, 130, 246, 0.3)',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-      }} className="rounded-xl p-8 shadow-2xl border relative">
+        borderRadius: '8px',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
+        borderColor: 'rgba(59, 130, 246, 0.3)'
+      }} className="p-8 border relative">
         
         {/* Header with FXCritics branding */}
         <div className="mb-8">
