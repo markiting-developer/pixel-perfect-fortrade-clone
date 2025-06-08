@@ -14,7 +14,7 @@ const SignupForm = () => {
     email: "",
     phoneCode: "44",
     phone: "",
-    agreement: false
+    agreement: true
   });
 
   const handleInputChange = (field: string, value: string | boolean) => {
@@ -46,7 +46,7 @@ const SignupForm = () => {
         email: "",
         phoneCode: "44",
         phone: "",
-        agreement: false
+        agreement: true
       });
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
@@ -57,7 +57,7 @@ const SignupForm = () => {
 
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-sm bg-gray-800/95 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-gray-700/50">
+      <div className="relative w-full max-w-sm bg-gray-800/95 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-gray-700/30">
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-500 mb-4" />
           <p className="text-white text-center">Processing your registration...</p>
@@ -69,26 +69,26 @@ const SignupForm = () => {
   return (
     <div className="relative w-full max-w-sm">
       {/* Trusted Partner Badge - positioned outside the form, overlapping top-right */}
-      <div className="absolute -top-4 -right-4 z-20">
+      <div className="absolute -top-3 -right-3 z-20">
         <img 
           src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" 
           alt="Trusted Partner" 
-          className="h-16 w-16"
+          className="h-20 w-20"
         />
       </div>
 
       {/* Main Form Container */}
-      <div className="bg-gray-800/95 backdrop-blur-xl rounded-xl p-6 shadow-2xl border border-gray-700/50 relative">
+      <div className="bg-gray-800/95 backdrop-blur-xl rounded-xl p-7 shadow-2xl border border-gray-700/30 relative">
         {/* Header with FXCritics branding */}
         <div className="mb-6">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-gray-300 text-sm font-medium">Trusted by</span>
+          <div className="flex items-end gap-2 mb-6">
+            <span className="text-gray-300 text-sm font-normal">Trusted by</span>
             <img 
               src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" 
               alt="FX" 
-              className="h-4 w-auto"
+              className="h-6 w-auto"
             />
-            <span className="text-white text-sm font-medium">Critics</span>
+            <span className="text-white text-sm font-normal">Critics</span>
           </div>
         </div>
 
@@ -100,7 +100,7 @@ const SignupForm = () => {
               placeholder="First Name"
               value={formData.firstName}
               onChange={(e) => handleInputChange("firstName", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg text-base"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-normal"
               required
             />
           </div>
@@ -111,7 +111,7 @@ const SignupForm = () => {
               placeholder="Last Name"
               value={formData.lastName}
               onChange={(e) => handleInputChange("lastName", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg text-base"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-normal"
               required
             />
           </div>
@@ -122,7 +122,7 @@ const SignupForm = () => {
               placeholder="Email"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg text-base"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-normal"
               required
             />
           </div>
@@ -133,40 +133,40 @@ const SignupForm = () => {
               placeholder="44"
               value={formData.phoneCode}
               onChange={(e) => handleInputChange("phoneCode", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg w-20 text-base"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md w-20 text-sm font-normal"
             />
             <Input
               type="tel"
               placeholder="Phone"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
-              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-14 px-4 rounded-lg flex-1 text-base"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md flex-1 text-sm font-normal"
               required
             />
           </div>
 
           <Button 
             type="submit" 
-            className="w-full h-12 text-white font-semibold text-base rounded-lg transition-all duration-200 hover:opacity-90 mt-5"
+            className="w-full h-12 text-white font-bold text-sm rounded-md transition-all duration-200 hover:brightness-110 mt-6"
             style={{ backgroundColor: '#2193FF' }}
             disabled={isLoading}
           >
             GET STARTED →
           </Button>
 
-          <div className="flex items-start gap-3 mt-3">
+          <div className="flex items-start gap-3 mt-4">
             <Checkbox
               id="agreement"
               checked={formData.agreement}
               onCheckedChange={(checked) => handleInputChange("agreement", checked as boolean)}
-              className="mt-1 border-gray-500 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
+              className="mt-0.5 border-gray-500 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
             />
-            <label htmlFor="agreement" className="text-sm text-gray-300 leading-relaxed">
+            <label htmlFor="agreement" className="text-sm text-gray-300 leading-relaxed font-normal">
               I agree to share my details to Fortrade.com and create a demo trading account.
             </label>
           </div>
 
-          <div className="text-xs text-gray-400 leading-relaxed mt-4 opacity-60">
+          <div className="text-xs text-white/60 leading-relaxed mt-5 font-normal">
             <p>
               By proceeding, I agree to the{" "}
               <a href="#" className="text-blue-400 underline hover:text-blue-300">Privacy Policy</a>{" "}
@@ -179,11 +179,11 @@ const SignupForm = () => {
             </p>
           </div>
 
-          <div className="text-center mt-4 space-y-1">
-            <p className="text-gray-400 text-xs opacity-60">
+          <div className="text-center mt-5 space-y-1">
+            <p className="text-gray-400 text-xs font-normal">
               Already have an account?
             </p>
-            <p className="text-xs opacity-60">
+            <p className="text-xs font-normal text-gray-400">
               Need help?{" "}
               <a href="#" className="text-blue-400 underline hover:text-blue-300">Contact Us</a>
             </p>
