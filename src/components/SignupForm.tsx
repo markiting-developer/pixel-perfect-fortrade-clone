@@ -188,11 +188,14 @@ const SignupForm = () => {
 
           <Button 
             type="submit" 
-            className="w-full h-14 text-white font-bold text-base rounded-lg transition-all duration-200 hover:brightness-110 mt-6" 
+            className="w-full text-white font-bold text-base rounded-lg transition-all duration-200 mt-6" 
             style={{
               backgroundColor: '#3c84ff',
-              color: '#ffffff'
-            }} 
+              height: '50px',
+              borderRadius: '6px'
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#5b9dff'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#3c84ff'}
             disabled={isLoading}
           >
             GET STARTED →
