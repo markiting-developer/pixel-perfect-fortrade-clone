@@ -57,9 +57,14 @@ const SignupForm = () => {
 
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-sm bg-gray-800/95 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-gray-700/30">
+      <div className="relative w-full max-w-sm rounded-xl p-8 shadow-2xl border" 
+           style={{
+             background: 'linear-gradient(135deg, #1a2332 0%, #1e2a3a 50%, #1a2332 100%)',
+             borderColor: 'rgba(59, 130, 246, 0.3)',
+             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+           }}>
         <div className="flex flex-col items-center justify-center py-12">
-          <Loader2 className="h-8 w-8 animate-spin text-blue-500 mb-4" />
+          <Loader2 className="h-8 w-8 animate-spin text-blue-400 mb-4" />
           <p className="text-white text-center">Processing your registration...</p>
         </div>
       </div>
@@ -69,26 +74,32 @@ const SignupForm = () => {
   return (
     <div className="relative w-full max-w-sm">
       {/* Trusted Partner Badge - positioned outside the form, overlapping top-right */}
-      <div className="absolute -top-6 -right-6 z-20">
+      <div className="absolute -top-8 -right-8 z-20">
         <img 
           src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" 
           alt="Trusted Partner" 
-          className="h-28 w-28"
+          className="h-32 w-32"
         />
       </div>
 
-      {/* Main Form Container */}
-      <div className="bg-gray-800/95 backdrop-blur-xl rounded-xl p-8 shadow-2xl border border-gray-700/30 relative">
-        {/* Header with FXCritics branding - BIGGER SIZE */}
-        <div className="mb-6">
+      {/* Main Form Container with rich navy gradient */}
+      <div className="rounded-xl p-8 shadow-2xl border relative" 
+           style={{
+             background: 'linear-gradient(135deg, #1a2332 0%, #1e2a3a 50%, #1a2332 100%)',
+             borderColor: 'rgba(59, 130, 246, 0.3)',
+             boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+           }}>
+        
+        {/* Header with FXCritics branding */}
+        <div className="mb-8">
           <div className="flex items-end gap-2 mb-6">
-            <span className="text-gray-300 text-base font-medium">Trusted by</span>
+            <span className="text-gray-300 text-lg font-medium">Trusted by</span>
             <img 
               src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" 
               alt="FX" 
-              className="h-9 w-auto mb-0.5"
+              className="h-12 w-auto mb-0.5"
             />
-            <span className="text-white text-base font-medium">Critics</span>
+            <span className="text-white text-lg font-medium">Critics</span>
           </div>
         </div>
 
@@ -100,7 +111,12 @@ const SignupForm = () => {
               placeholder="First Name"
               value={formData.firstName}
               onChange={(e) => handleInputChange("firstName", e.target.value)}
-              className="bg-gray-700/60 border border-white/20 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-light"
+              className="h-12 px-4 rounded-md text-sm font-light text-white placeholder:text-gray-300"
+              style={{
+                backgroundColor: 'rgba(30, 42, 58, 0.7)',
+                borderColor: 'rgba(59, 130, 246, 0.6)',
+                borderWidth: '1px'
+              }}
               required
             />
           </div>
@@ -111,7 +127,12 @@ const SignupForm = () => {
               placeholder="Last Name"
               value={formData.lastName}
               onChange={(e) => handleInputChange("lastName", e.target.value)}
-              className="bg-gray-700/60 border border-white/20 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-light"
+              className="h-12 px-4 rounded-md text-sm font-light text-white placeholder:text-gray-300"
+              style={{
+                backgroundColor: 'rgba(30, 42, 58, 0.7)',
+                borderColor: 'rgba(59, 130, 246, 0.6)',
+                borderWidth: '1px'
+              }}
               required
             />
           </div>
@@ -122,7 +143,12 @@ const SignupForm = () => {
               placeholder="Email"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className="bg-gray-700/60 border border-white/20 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-light"
+              className="h-12 px-4 rounded-md text-sm font-light text-white placeholder:text-gray-300"
+              style={{
+                backgroundColor: 'rgba(30, 42, 58, 0.7)',
+                borderColor: 'rgba(59, 130, 246, 0.6)',
+                borderWidth: '1px'
+              }}
               required
             />
           </div>
@@ -133,14 +159,24 @@ const SignupForm = () => {
               placeholder="44"
               value={formData.phoneCode}
               onChange={(e) => handleInputChange("phoneCode", e.target.value)}
-              className="bg-gray-700/60 border border-white/20 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md w-20 text-sm font-light"
+              className="h-12 px-4 rounded-md w-20 text-sm font-light text-white placeholder:text-gray-300"
+              style={{
+                backgroundColor: 'rgba(30, 42, 58, 0.7)',
+                borderColor: 'rgba(59, 130, 246, 0.6)',
+                borderWidth: '1px'
+              }}
             />
             <Input
               type="tel"
               placeholder="Phone"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
-              className="bg-gray-700/60 border border-white/20 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md flex-1 text-sm font-light"
+              className="h-12 px-4 rounded-md flex-1 text-sm font-light text-white placeholder:text-gray-300"
+              style={{
+                backgroundColor: 'rgba(30, 42, 58, 0.7)',
+                borderColor: 'rgba(59, 130, 246, 0.6)',
+                borderWidth: '1px'
+              }}
               required
             />
           </div>
@@ -148,7 +184,10 @@ const SignupForm = () => {
           <Button 
             type="submit" 
             className="w-full h-12 text-white font-bold text-sm rounded-md transition-all duration-200 hover:brightness-110 mt-6"
-            style={{ backgroundColor: '#2193FF' }}
+            style={{ 
+              backgroundColor: '#3c84ff',
+              color: '#ffffff'
+            }}
             disabled={isLoading}
           >
             GET STARTED →
@@ -159,7 +198,10 @@ const SignupForm = () => {
               id="agreement"
               checked={formData.agreement}
               onCheckedChange={(checked) => handleInputChange("agreement", checked as boolean)}
-              className="mt-0.5 border-gray-500 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
+              className="mt-0.5 data-[state=checked]:bg-blue-500 data-[state=checked]:border-blue-500"
+              style={{
+                borderColor: 'rgba(59, 130, 246, 0.8)'
+              }}
             />
             <label htmlFor="agreement" className="text-sm text-gray-300 leading-relaxed font-normal">
               I agree to share my details to Fortrade.com and create a demo trading account.
