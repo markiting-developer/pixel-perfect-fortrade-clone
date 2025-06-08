@@ -51,7 +51,7 @@ const SignupForm = () => {
   if (isLoading) {
     return (
       <div className="relative w-full max-w-sm rounded-xl p-8 shadow-2xl border" style={{
-        background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%)',
+        backgroundColor: '#020826',
         borderColor: 'rgba(59, 130, 246, 0.3)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
       }}>
@@ -69,9 +69,9 @@ const SignupForm = () => {
         <img src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" alt="Trusted Partner" className="h-24 w-24" />
       </div>
 
-      {/* Main Form Container with rich navy gradient */}
+      {/* Main Form Container with #020826 background */}
       <div style={{
-        background: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%)',
+        backgroundColor: '#020826',
         borderColor: 'rgba(59, 130, 246, 0.3)',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
       }} className="rounded-xl p-8 shadow-2xl border relative">
