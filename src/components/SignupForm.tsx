@@ -59,28 +59,28 @@ const SignupForm = () => {
 
   if (isLoading) {
     return (
-      <TiltCard className="relative w-full max-w-md p-8 bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+      <TiltCard className="relative w-full max-w-[320px] sm:max-w-md p-4 sm:p-8 bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] mx-auto">
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-400 mb-4" />
-          <p className="text-white text-center">Processing your registration...</p>
+          <p className="text-white text-center text-sm sm:text-base">Processing your registration...</p>
         </div>
       </TiltCard>
     );
   }
 
   return (
-    <div className="relative w-full max-w-md mt-6 md:mt-0">
+    <div className="relative w-full max-w-[320px] sm:max-w-md mt-6 md:mt-0 mx-auto">
       <TrustedPartnerBadge />
 
       {/* Main Form Container with 3D Tilt Effect */}
-      <TiltCard className="bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] p-6 md:p-8 relative border border-white/10">
+      <TiltCard className="bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] p-4 sm:p-6 md:p-8 relative border border-white/10">
         
         <ParallaxElement intensity={0.2}>
           <FormHeader />
         </ParallaxElement>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
           <FormInput
             type="text"
             placeholder="First Name"
@@ -118,7 +118,7 @@ const SignupForm = () => {
           <ParallaxElement intensity={0.4}>
             <Button 
               type="submit" 
-              className="w-full bg-[#3c84ff] hover:bg-[#2c74ef] text-white font-bold text-base rounded-lg h-12 mt-6 shadow-lg hover:shadow-xl transition-all duration-200" 
+              className="w-full bg-[#3c84ff] hover:bg-[#2c74ef] text-white font-bold text-sm sm:text-base rounded-lg h-10 sm:h-12 mt-4 sm:mt-6 shadow-lg hover:shadow-xl transition-all duration-200" 
               disabled={isLoading}
             >
               GET STARTED →

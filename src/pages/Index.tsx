@@ -20,8 +20,8 @@ const Index = () => {
       <Header />
       
       {/* Content - Mobile optimized layout */}
-      <div className="relative z-10 min-h-screen flex flex-col px-6 pt-20 md:pt-0 md:flex-row md:items-center md:justify-center md:px-8">
-        <main className="w-full max-w-md mx-auto md:mx-0">
+      <div className="relative z-10 min-h-screen flex flex-col px-4 sm:px-6 pt-16 sm:pt-20 md:pt-0 md:flex-row md:items-center md:justify-center md:px-8">
+        <main className="w-full max-w-[320px] sm:max-w-md mx-auto md:mx-0">
           <SignupForm />
         </main>
       </div>
