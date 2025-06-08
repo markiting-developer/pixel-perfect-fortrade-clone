@@ -66,7 +66,7 @@ const SignupForm = () => {
     <div className="relative w-full max-w-sm">
       {/* Trusted Partner Badge - positioned outside the form, overlapping top-right */}
       <div className="absolute -top-12 -right-12 z-20">
-        <img src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" alt="Trusted Partner" className="h-30 w-30" />
+        <img src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" alt="Trusted Partner" className="h-36 w-36" />
       </div>
 
       {/* Main Form Container with #020826 background */}
@@ -81,7 +81,7 @@ const SignupForm = () => {
           <div className="mb-6">
             <p className="text-gray-300 text-sm font-normal mb-3">Trusted by</p>
             <div className="flex items-baseline gap-1">
-              <img src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" alt="FX" className="h-13 w-auto" />
+              <img src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" alt="FX" className="h-12 w-auto" />
               <span className="text-white text-3xl font-bold">Critics</span>
             </div>
           </div>
@@ -99,6 +99,8 @@ const SignupForm = () => {
               className="h-12 pl-12 pr-4 rounded-md text-sm text-white placeholder:text-gray-300"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
                 border: '1px solid white',
                 borderRadius: '6px'
               }}
@@ -118,6 +120,8 @@ const SignupForm = () => {
               className="h-12 pl-12 pr-4 rounded-md text-sm text-white placeholder:text-gray-300"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
                 border: '1px solid white',
                 borderRadius: '6px'
               }}
@@ -137,6 +141,8 @@ const SignupForm = () => {
               className="h-12 pl-12 pr-4 rounded-md text-sm text-white placeholder:text-gray-300"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
                 border: '1px solid white',
                 borderRadius: '6px'
               }}
@@ -157,6 +163,8 @@ const SignupForm = () => {
                 className="h-12 pl-10 pr-4 rounded-md w-20 text-sm text-white placeholder:text-gray-300"
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
                   border: '1px solid white',
                   borderRadius: '6px'
                 }}
@@ -174,6 +182,8 @@ const SignupForm = () => {
                 className="h-12 pl-10 pr-4 rounded-md text-sm text-white placeholder:text-gray-300"
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
                   border: '1px solid white',
                   borderRadius: '6px'
                 }}
