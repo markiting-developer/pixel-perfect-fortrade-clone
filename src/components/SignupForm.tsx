@@ -8,6 +8,8 @@ import FormHeader from "./FormHeader";
 import FormInput from "./FormInput";
 import PhoneInputGroup from "./PhoneInputGroup";
 import AgreementSection from "./AgreementSection";
+import TiltCard from "./TiltCard";
+import ParallaxElement from "./ParallaxElement";
 
 const SignupForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -57,12 +59,12 @@ const SignupForm = () => {
 
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-md p-8 bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+      <TiltCard className="relative w-full max-w-md p-8 bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-400 mb-4" />
           <p className="text-white text-center">Processing your registration...</p>
         </div>
-      </div>
+      </TiltCard>
     );
   }
 
@@ -70,10 +72,12 @@ const SignupForm = () => {
     <div className="relative w-full max-w-md">
       <TrustedPartnerBadge />
 
-      {/* Main Form Container */}
-      <div className="bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] p-8 relative border border-white/10">
+      {/* Main Form Container with 3D Tilt Effect */}
+      <TiltCard className="bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] p-8 relative border border-white/10">
         
-        <FormHeader />
+        <ParallaxElement intensity={0.2}>
+          <FormHeader />
+        </ParallaxElement>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -111,20 +115,22 @@ const SignupForm = () => {
             onPhoneChange={value => handleInputChange("phone", value)}
           />
 
-          <Button 
-            type="submit" 
-            className="w-full bg-[#3c84ff] hover:bg-[#2c74ef] text-white font-bold text-base rounded-lg h-12 mt-6 shadow-lg hover:shadow-xl transition-all duration-200" 
-            disabled={isLoading}
-          >
-            GET STARTED →
-          </Button>
+          <ParallaxElement intensity={0.4}>
+            <Button 
+              type="submit" 
+              className="w-full bg-[#3c84ff] hover:bg-[#2c74ef] text-white font-bold text-base rounded-lg h-12 mt-6 shadow-lg hover:shadow-xl transition-all duration-200" 
+              disabled={isLoading}
+            >
+              GET STARTED →
+            </Button>
+          </ParallaxElement>
 
           <AgreementSection
             agreement={formData.agreement}
             onAgreementChange={checked => handleInputChange("agreement", checked)}
           />
         </form>
-      </div>
+      </TiltCard>
     </div>
   );
 };
