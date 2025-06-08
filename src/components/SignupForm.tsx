@@ -57,7 +57,7 @@ const SignupForm = () => {
 
   if (isLoading) {
     return (
-      <div className="relative w-full max-w-sm bg-gray-800/95 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-gray-700/30">
+      <div className="relative w-full max-w-xs bg-gray-800/95 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-gray-700/30">
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-500 mb-4" />
           <p className="text-white text-center">Processing your registration...</p>
@@ -67,40 +67,40 @@ const SignupForm = () => {
   }
 
   return (
-    <div className="relative w-full max-w-sm">
+    <div className="relative w-full max-w-xs">
       {/* Trusted Partner Badge - positioned outside the form, overlapping top-right */}
-      <div className="absolute -top-3 -right-3 z-20">
+      <div className="absolute -top-4 -right-4 z-20">
         <img 
           src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" 
           alt="Trusted Partner" 
-          className="h-20 w-20"
+          className="h-24 w-24"
         />
       </div>
 
       {/* Main Form Container */}
-      <div className="bg-gray-800/95 backdrop-blur-xl rounded-xl p-7 shadow-2xl border border-gray-700/30 relative">
+      <div className="bg-gray-800/95 backdrop-blur-xl rounded-xl p-6 shadow-2xl border border-gray-700/30 relative">
         {/* Header with FXCritics branding */}
-        <div className="mb-6">
-          <div className="flex items-end gap-2 mb-6">
+        <div className="mb-5">
+          <div className="flex items-end gap-1.5 mb-5">
             <span className="text-gray-300 text-sm font-normal">Trusted by</span>
             <img 
               src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" 
               alt="FX" 
-              className="h-6 w-auto"
+              className="h-7 w-auto mb-0.5"
             />
             <span className="text-white text-sm font-normal">Critics</span>
           </div>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3.5">
           <div>
             <Input
               type="text"
               placeholder="First Name"
               value={formData.firstName}
               onChange={(e) => handleInputChange("firstName", e.target.value)}
-              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-normal"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-11 px-3.5 rounded text-sm font-light"
               required
             />
           </div>
@@ -111,7 +111,7 @@ const SignupForm = () => {
               placeholder="Last Name"
               value={formData.lastName}
               onChange={(e) => handleInputChange("lastName", e.target.value)}
-              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-normal"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-11 px-3.5 rounded text-sm font-light"
               required
             />
           </div>
@@ -122,39 +122,39 @@ const SignupForm = () => {
               placeholder="Email"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md text-sm font-normal"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-11 px-3.5 rounded text-sm font-light"
               required
             />
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-2.5">
             <Input
               type="text"
               placeholder="44"
               value={formData.phoneCode}
               onChange={(e) => handleInputChange("phoneCode", e.target.value)}
-              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md w-20 text-sm font-normal"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-11 px-3.5 rounded w-16 text-sm font-light"
             />
             <Input
               type="tel"
               placeholder="Phone"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
-              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-md flex-1 text-sm font-normal"
+              className="bg-gray-700/60 border border-white/10 text-white placeholder-gray-400 focus:border-blue-500 h-11 px-3.5 rounded flex-1 text-sm font-light"
               required
             />
           </div>
 
           <Button 
             type="submit" 
-            className="w-full h-12 text-white font-bold text-sm rounded-md transition-all duration-200 hover:brightness-110 mt-6"
+            className="w-full h-12 text-white font-bold text-sm rounded transition-all duration-200 hover:brightness-110 mt-5"
             style={{ backgroundColor: '#2193FF' }}
             disabled={isLoading}
           >
             GET STARTED →
           </Button>
 
-          <div className="flex items-start gap-3 mt-4">
+          <div className="flex items-start gap-2.5 mt-3">
             <Checkbox
               id="agreement"
               checked={formData.agreement}
@@ -166,7 +166,7 @@ const SignupForm = () => {
             </label>
           </div>
 
-          <div className="text-xs text-white/60 leading-relaxed mt-5 font-normal">
+          <div className="text-xs leading-relaxed mt-4 font-normal" style={{ color: 'rgba(255,255,255,0.6)' }}>
             <p>
               By proceeding, I agree to the{" "}
               <a href="#" className="text-blue-400 underline hover:text-blue-300">Privacy Policy</a>{" "}
@@ -179,7 +179,7 @@ const SignupForm = () => {
             </p>
           </div>
 
-          <div className="text-center mt-5 space-y-1">
+          <div className="text-center mt-4 space-y-0.5">
             <p className="text-gray-400 text-xs font-normal">
               Already have an account?
             </p>
