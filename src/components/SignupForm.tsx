@@ -101,11 +101,11 @@ const SignupForm = () => {
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
-                border: '1px solid white',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
                 borderRadius: '6px'
               }}
               onFocus={(e) => e.target.style.borderColor = '#3c84ff'}
-              onBlur={(e) => e.target.style.borderColor = 'white'}
+              onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)'}
               required 
             />
           </div>
@@ -122,11 +122,11 @@ const SignupForm = () => {
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
-                border: '1px solid white',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
                 borderRadius: '6px'
               }}
               onFocus={(e) => e.target.style.borderColor = '#3c84ff'}
-              onBlur={(e) => e.target.style.borderColor = 'white'}
+              onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)'}
               required 
             />
           </div>
@@ -143,11 +143,11 @@ const SignupForm = () => {
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
-                border: '1px solid white',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
                 borderRadius: '6px'
               }}
               onFocus={(e) => e.target.style.borderColor = '#3c84ff'}
-              onBlur={(e) => e.target.style.borderColor = 'white'}
+              onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)'}
               required 
             />
           </div>
@@ -165,11 +165,11 @@ const SignupForm = () => {
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',
                   backdropFilter: 'blur(10px)',
                   WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid white',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
                   borderRadius: '6px'
                 }}
                 onFocus={(e) => e.target.style.borderColor = '#3c84ff'}
-                onBlur={(e) => e.target.style.borderColor = 'white'}
+                onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)'}
               />
             </div>
             <div className="relative flex-1">
@@ -184,11 +184,11 @@ const SignupForm = () => {
                   backgroundColor: 'rgba(255, 255, 255, 0.05)',
                   backdropFilter: 'blur(10px)',
                   WebkitBackdropFilter: 'blur(10px)',
-                  border: '1px solid white',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
                   borderRadius: '6px'
                 }}
                 onFocus={(e) => e.target.style.borderColor = '#3c84ff'}
-                onBlur={(e) => e.target.style.borderColor = 'white'}
+                onBlur={(e) => e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)'}
                 required 
               />
             </div>
