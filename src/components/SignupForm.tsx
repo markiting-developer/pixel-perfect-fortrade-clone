@@ -69,11 +69,11 @@ const SignupForm = () => {
   }
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative w-full max-w-md mt-6 md:mt-0">
       <TrustedPartnerBadge />
 
       {/* Main Form Container with 3D Tilt Effect */}
-      <TiltCard className="bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] p-8 relative border border-white/10">
+      <TiltCard className="bg-[#020826] rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] p-6 md:p-8 relative border border-white/10">
         
         <ParallaxElement intensity={0.2}>
           <FormHeader />
