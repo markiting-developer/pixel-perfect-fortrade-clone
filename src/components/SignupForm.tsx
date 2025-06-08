@@ -35,7 +35,7 @@ const SignupForm = () => {
     setIsLoading(true);
     
     try {
-      // Simulate form submission
+      // Simulate form submission to Fortrade endpoint
       await new Promise(resolve => setTimeout(resolve, 2000));
       toast.success("Registration submitted successfully!");
       
@@ -57,7 +57,7 @@ const SignupForm = () => {
 
   if (isLoading) {
     return (
-      <div className="bg-gray-800/90 backdrop-blur-sm rounded-xl p-8 border border-gray-700 relative">
+      <div className="relative w-full max-w-sm bg-gray-800/95 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-gray-700/50">
         <div className="flex flex-col items-center justify-center py-12">
           <Loader2 className="h-8 w-8 animate-spin text-blue-500 mb-4" />
           <p className="text-white text-center">Processing your registration...</p>
@@ -67,125 +67,129 @@ const SignupForm = () => {
   }
 
   return (
-    <div className="bg-gray-800/90 backdrop-blur-sm rounded-xl p-8 border border-gray-700 relative">
-      {/* Trusted Partner Badge */}
-      <div className="absolute -top-4 -right-4">
+    <div className="relative w-full max-w-sm">
+      {/* Trusted Partner Badge - positioned outside the form */}
+      <div className="absolute -top-6 -right-6 z-10">
         <img 
-          src="/lovable-uploads/c1c64c79-3519-496d-b9f5-617ee7c56aa1.png" 
+          src="/lovable-uploads/21fc4cb8-1e35-44ea-bfad-badea26e461f.png" 
           alt="Trusted Partner" 
-          className="h-16 w-16"
+          className="h-20 w-20"
         />
       </div>
 
-      {/* Header */}
-      <div className="mb-6">
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-gray-400 text-sm">Trusted by</span>
-          <img 
-            src="/lovable-uploads/d0bbb2aa-489b-41bc-a18f-f9533a1d0a6f.png" 
-            alt="FX" 
-            className="h-6 w-auto"
-          />
-          <span className="text-white text-lg font-medium">Critics</span>
+      {/* Main Form Container */}
+      <div className="bg-gray-800/95 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-gray-700/50">
+        {/* Header */}
+        <div className="mb-8">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-gray-300 text-sm font-medium">Trusted by</span>
+            <img 
+              src="/lovable-uploads/208044a7-6b78-4781-9c35-2f68a2dafd9c.png" 
+              alt="FX" 
+              className="h-5 w-auto"
+            />
+            <span className="text-white text-sm font-medium">Critics</span>
+          </div>
         </div>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <Input
+              type="text"
+              placeholder="First Name"
+              value={formData.firstName}
+              onChange={(e) => handleInputChange("firstName", e.target.value)}
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg"
+              required
+            />
+          </div>
+
+          <div>
+            <Input
+              type="text"
+              placeholder="Last Name"
+              value={formData.lastName}
+              onChange={(e) => handleInputChange("lastName", e.target.value)}
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg"
+              required
+            />
+          </div>
+
+          <div>
+            <Input
+              type="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={(e) => handleInputChange("email", e.target.value)}
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg"
+              required
+            />
+          </div>
+
+          <div className="flex gap-3">
+            <Input
+              type="text"
+              placeholder="44"
+              value={formData.phoneCode}
+              onChange={(e) => handleInputChange("phoneCode", e.target.value)}
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg w-20"
+            />
+            <Input
+              type="tel"
+              placeholder="Phone"
+              value={formData.phone}
+              onChange={(e) => handleInputChange("phone", e.target.value)}
+              className="bg-gray-700/80 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 h-12 px-4 rounded-lg flex-1"
+              required
+            />
+          </div>
+
+          <Button 
+            type="submit" 
+            className="w-full h-12 text-white font-semibold text-base rounded-lg transition-all duration-200 hover:opacity-90"
+            style={{ backgroundColor: '#2193FF' }}
+            disabled={isLoading}
+          >
+            GET STARTED →
+          </Button>
+
+          <div className="flex items-start gap-3 mt-6">
+            <Checkbox
+              id="agreement"
+              checked={formData.agreement}
+              onCheckedChange={(checked) => handleInputChange("agreement", checked as boolean)}
+              className="mt-1 border-gray-500 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
+            />
+            <label htmlFor="agreement" className="text-sm text-gray-300 leading-relaxed">
+              I agree to share my details to Fortrade.com and create a demo trading account.
+            </label>
+          </div>
+
+          <div className="text-xs text-gray-400 leading-relaxed mt-6 opacity-60">
+            <p>
+              By proceeding, I agree to the{" "}
+              <a href="#" className="text-blue-400 underline hover:text-blue-300">Privacy Policy</a>{" "}
+              and the{" "}
+              <a href="#" className="text-blue-400 underline hover:text-blue-300">Terms and Conditions</a>.{" "}
+              I agree to receive important updates and promotions. I understand that I can unsubscribe from the 
+              marketing notifications anytime via notification settings.{" "}
+              For more information, please{" "}
+              <a href="#" className="text-blue-400 underline hover:text-blue-300">click here</a>.
+            </p>
+          </div>
+
+          <div className="text-center mt-6 space-y-2">
+            <p className="text-gray-400 text-sm">
+              Already have an account?
+            </p>
+            <p className="text-sm">
+              Need help?{" "}
+              <a href="#" className="text-blue-400 underline hover:text-blue-300">Contact Us</a>
+            </p>
+          </div>
+        </form>
       </div>
-
-      {/* Form */}
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <Input
-            type="text"
-            placeholder="First Name"
-            value={formData.firstName}
-            onChange={(e) => handleInputChange("firstName", e.target.value)}
-            className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-            required
-          />
-        </div>
-
-        <div>
-          <Input
-            type="text"
-            placeholder="Last Name"
-            value={formData.lastName}
-            onChange={(e) => handleInputChange("lastName", e.target.value)}
-            className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-            required
-          />
-        </div>
-
-        <div>
-          <Input
-            type="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={(e) => handleInputChange("email", e.target.value)}
-            className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500"
-            required
-          />
-        </div>
-
-        <div className="flex gap-2">
-          <Input
-            type="text"
-            placeholder="44"
-            value={formData.phoneCode}
-            onChange={(e) => handleInputChange("phoneCode", e.target.value)}
-            className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 w-20"
-          />
-          <Input
-            type="tel"
-            placeholder="Phone"
-            value={formData.phone}
-            onChange={(e) => handleInputChange("phone", e.target.value)}
-            className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 flex-1"
-            required
-          />
-        </div>
-
-        <Button 
-          type="submit" 
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors"
-          disabled={isLoading}
-        >
-          GET STARTED →
-        </Button>
-
-        <div className="flex items-start gap-2 mt-4">
-          <Checkbox
-            id="agreement"
-            checked={formData.agreement}
-            onCheckedChange={(checked) => handleInputChange("agreement", checked as boolean)}
-            className="mt-0.5 border-gray-500 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600"
-          />
-          <label htmlFor="agreement" className="text-xs text-gray-300 leading-relaxed">
-            I agree to share my details to Fortrade.com and create a demo trading account.
-          </label>
-        </div>
-
-        <div className="text-xs text-gray-400 leading-relaxed mt-4">
-          <p>
-            By proceeding, I agree to the{" "}
-            <a href="#" className="text-blue-400 hover:underline">Privacy Policy</a>{" "}
-            and the{" "}
-            <a href="#" className="text-blue-400 hover:underline">Terms and Conditions</a>.{" "}
-            I agree to receive important updates and promotions. I understand that I can unsubscribe from the 
-            marketing notifications anytime via notification settings.{" "}
-            For more information, please{" "}
-            <a href="#" className="text-blue-400 hover:underline">click here</a>.
-          </p>
-        </div>
-
-        <div className="text-center mt-4">
-          <p className="text-gray-400 text-sm">
-            Already have an account?
-          </p>
-          <p className="text-sm">
-            Need help?{" "}
-            <a href="#" className="text-blue-400 hover:underline">Contact Us</a>
-          </p>
-        </div>
-      </form>
     </div>
   );
 };
